@@ -50,6 +50,6 @@
     <polygon points="-132,0 0,0 0,72" fill="rgba(10, 15, 26, 0.82)" />
 
     <!-- TWT Typography Inside Diamond Border -->
-    <text x="0" y="20" font-family="'Outfit', 'Inter', -apple-system, sans-serif" font-weight="900" font-style="italic" font-size="52" fill="url(#twtTextGrad)" letter-spacing="4" stroke="rgba(0,0,0,0.5)" stroke-width="1.5">TWT</text>
+    <text x="0" y="24" font-family="'Outfit', 'Inter', -apple-system, sans-serif" font-weight="900" font-style="italic" font-size="70" fill="url(#twtTextGrad)" letter-spacing="3" stroke="rgba(0,0,0,0.6)" stroke-width="2">TWT</text>
   </g>
 </svg>
