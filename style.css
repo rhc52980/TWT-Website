@@ -1089,19 +1089,77 @@ input[type=range]::-webkit-slider-thumb:hover {
   color: var(--text-muted);
 }
 
-/* --- 8. Banner CTA Section --- */
-.banner-cta-section {
-  background: linear-gradient(135deg, #0044aa 0%, #002266 100%);
-  padding: 70px 0;
+/* --- About Us Section --- */
+.about-section {
+  background-color: var(--bg-card-alt);
+  padding: 90px 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
-.banner-cta-box h2 {
+.about-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 56px 48px;
+  box-shadow: var(--shadow-lg);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-lead-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-main);
+  max-width: 860px;
+  margin: 0 auto 40px auto;
+}
+
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 36px;
+}
+
+.stat-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.stat-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-4px);
+}
+
+.stat-number {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: 2.5rem;
   font-weight: 900;
+  color: var(--secondary);
+  display: block;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 800;
   letter-spacing: 0.08em;
-  margin-bottom: 12px;
-  color: #fff;
+  color: var(--text-main);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.stat-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
 }
 
 .banner-cta-box p {
