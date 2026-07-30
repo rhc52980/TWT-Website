@@ -1461,6 +1461,41 @@ input[type=range]::-webkit-slider-thumb:hover {
     display: none;
   }
 
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-brand-block {
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-diamond-icon {
+    height: 160px;
+    margin: 0 auto 16px auto;
+    display: block;
+  }
+
+  .hero-brand-sub {
+    font-size: clamp(1.1rem, 5vw, 1.8rem);
+    text-align: center;
+    white-space: normal;
+  }
+
+  .hero-description {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    width: 100%;
+  }
+
   .systems-grid {
     grid-template-columns: 1fr !important;
     gap: 20px;
