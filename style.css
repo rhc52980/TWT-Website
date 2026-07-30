@@ -1038,9 +1038,10 @@ input[type=range]::-webkit-slider-thumb:hover {
 .legionella-full-card {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   padding: 50px;
   box-shadow: var(--shadow-lg);
+  overflow: hidden;
 }
 
 .legionella-lead {
@@ -1091,12 +1092,13 @@ input[type=range]::-webkit-slider-thumb:hover {
 .about-box {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   padding: 56px 48px;
   box-shadow: var(--shadow-lg);
   width: 100%;
   margin: 0 auto;
   text-align: center;
+  overflow: hidden;
 }
 
 .about-text {
