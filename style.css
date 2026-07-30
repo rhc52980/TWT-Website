@@ -1481,14 +1481,63 @@ input[type=range]::-webkit-slider-thumb:hover {
     grid-template-columns: 1fr;
   }
 
+  .banner-cta-box h2 {
+    font-size: 2rem;
+  }
+
   .footer-container {
     grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    max-width: 100%;
+  }
+
+  .footer-logo .nav-brand-sub {
+    font-size: clamp(0.72rem, 3.8vw, 0.88rem);
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+
+  .footer-desc {
+    margin-top: 8px;
+    margin-bottom: 0;
   }
 
   .sub-container {
     flex-direction: column;
-    gap: 8px;
+    gap: 16px;
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .calc-card, .legionella-full-card, .contact-form-container, .chemistry-dashboard-card {
+    padding: 24px 16px;
+  }
+
+  .dash-metrics-grid {
+    grid-template-columns: 1fr;
   }
 }
 
