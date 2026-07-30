@@ -301,12 +301,13 @@ section {
 
 .hero-brand-sub {
   font-family: 'Candara', var(--font-heading);
-  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+  font-size: clamp(1.3rem, 2.8vw, 2.95rem);
   font-weight: 900;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   color: var(--text-main);
   text-transform: uppercase;
-  line-height: 1.15;
+  line-height: 1;
+  white-space: nowrap;
   margin-bottom: 12px;
 }
 
