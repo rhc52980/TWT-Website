@@ -745,7 +745,7 @@ section {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-  max-width: 1050px;
+  max-width: 1240px;
   margin: 0 auto;
   justify-content: center;
   align-items: stretch;
@@ -755,14 +755,12 @@ section {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 36px 20px;
+  padding: 36px 24px;
   transition: var(--transition);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  min-height: 180px;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .system-card:hover {
@@ -772,8 +770,8 @@ section {
 }
 
 .system-icon-box {
-  width: 56px;
-  height: 56px;
+  width: 52px;
+  height: 52px;
   background-color: rgba(0, 136, 255, 0.08);
   border: 1px solid rgba(0, 136, 255, 0.18);
   border-radius: var(--radius-md);
@@ -781,7 +779,7 @@ section {
   align-items: center;
   justify-content: center;
   color: var(--primary);
-  margin: 0 auto 18px auto;
+  margin-bottom: 20px;
 }
 
 .system-icon-box svg {
@@ -796,19 +794,20 @@ section {
 }
 
 .system-card h3 {
-  font-size: 0.85rem;
+  font-size: 1.15rem;
   font-weight: 800;
-  letter-spacing: 0.05em;
+  margin-bottom: 12px;
   color: var(--text-main);
-  text-align: center;
-  width: 100%;
-  margin: 0 auto;
 }
 
 .system-card p {
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.6;
+}
+
+.accent-title {
+  color: var(--secondary) !important;
 }
 
 /* --- 6. Interactive Calculator Section --- */
