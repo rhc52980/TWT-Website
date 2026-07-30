@@ -2,7 +2,15 @@
    TWT - TECHNICAL WATER TREATMENT APP SCRIPT
    ========================================================================== */
 
+// Ensure mobile browsers always open at the very top hero section
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  if (!window.location.hash) {
+    window.scrollTo(0, 0);
+  }
 
   /* --- 1. Mobile Menu Navigation --- */
   const menuToggle = document.getElementById('menuToggle');
