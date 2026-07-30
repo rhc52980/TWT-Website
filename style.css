@@ -1480,9 +1480,10 @@ input[type=range]::-webkit-slider-thumb:hover {
   }
 
   .hero-brand-sub {
-    font-size: clamp(1.1rem, 5vw, 1.8rem);
+    font-size: clamp(0.72rem, 4.3vw, 1.6rem);
+    letter-spacing: 0.08em;
     text-align: center;
-    white-space: normal;
+    white-space: nowrap;
   }
 
   .hero-description {
