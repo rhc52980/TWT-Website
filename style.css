@@ -1095,6 +1095,7 @@ input[type=range]::-webkit-slider-thumb:hover {
   padding: 90px 0;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
+  text-align: center;
 }
 
 .about-card {
@@ -1103,22 +1104,34 @@ input[type=range]::-webkit-slider-thumb:hover {
   border-radius: var(--radius-xl);
   padding: 56px 48px;
   box-shadow: var(--shadow-lg);
-  max-width: 1100px;
+  max-width: 1050px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 24px;
 }
 
 .about-lead-text {
   font-size: 1.15rem;
-  line-height: 1.8;
+  line-height: 1.85;
   color: var(--text-main);
-  max-width: 860px;
+  max-width: 880px;
   margin: 0 auto 40px auto;
+  text-align: center;
 }
 
 .about-stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  width: 100%;
   border-top: 1px solid var(--border-color);
   padding-top: 36px;
 }
@@ -1127,24 +1140,31 @@ input[type=range]::-webkit-slider-thumb:hover {
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 24px 20px;
+  padding: 28px 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
   transition: var(--transition);
 }
 
 .stat-card:hover {
   border-color: var(--primary);
   transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .stat-number {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   font-weight: 900;
   color: var(--secondary);
   display: block;
   line-height: 1;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .stat-label {
@@ -1154,12 +1174,14 @@ input[type=range]::-webkit-slider-thumb:hover {
   letter-spacing: 0.08em;
   color: var(--text-main);
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  text-align: center;
 }
 
 .stat-sub {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
+  text-align: center;
 }
 
 .banner-cta-box p {
