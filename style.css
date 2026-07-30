@@ -1095,76 +1095,64 @@ input[type=range]::-webkit-slider-thumb:hover {
   padding: 90px 0;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
-  text-align: center;
 }
 
-.about-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-xl);
-  padding: 56px 48px;
-  box-shadow: var(--shadow-lg);
-  max-width: 1050px;
-  margin: 0 auto;
+.about-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-left {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
 }
 
-.about-header {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 24px;
+.about-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-top: 8px;
 }
 
-.about-lead-text {
-  font-size: 1.15rem;
-  line-height: 1.85;
-  color: var(--text-main);
-  max-width: 880px;
-  margin: 0 auto 40px auto;
-  text-align: center;
-}
-
-.about-stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  width: 100%;
-  border-top: 1px solid var(--border-color);
-  padding-top: 36px;
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .stat-card {
-  background: var(--bg-surface);
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 28px 20px;
-  text-align: center;
+  padding: 20px 24px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100%;
+  gap: 20px;
   transition: var(--transition);
 }
 
 .stat-card:hover {
   border-color: var(--primary);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transform: translateX(6px);
+  box-shadow: 0 8px 24px rgba(0, 136, 255, 0.2);
 }
 
 .stat-number {
   font-family: var(--font-heading);
-  font-size: 2.6rem;
+  font-size: 2.4rem;
   font-weight: 900;
   color: var(--secondary);
-  display: block;
   line-height: 1;
-  margin-bottom: 10px;
+  min-width: 80px;
   text-align: center;
+}
+
+.stat-text {
+  display: flex;
+  flex-direction: column;
 }
 
 .stat-label {
@@ -1173,15 +1161,12 @@ input[type=range]::-webkit-slider-thumb:hover {
   font-weight: 800;
   letter-spacing: 0.08em;
   color: var(--text-main);
-  display: block;
-  margin-bottom: 6px;
-  text-align: center;
+  margin-bottom: 2px;
 }
 
 .stat-sub {
   font-size: 0.82rem;
   color: var(--text-muted);
-  text-align: center;
 }
 
 .banner-cta-box p {
@@ -1472,6 +1457,7 @@ input[type=range]::-webkit-slider-thumb:hover {
   .hero-container,
   .customized-container,
   .calculator-grid,
+  .about-container,
   .contact-container {
     grid-template-columns: 1fr;
     gap: 40px;
