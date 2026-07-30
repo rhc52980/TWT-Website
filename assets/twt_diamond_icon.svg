@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="100%" height="100%">
+  <defs>
+    <!-- Metallic Silver Chrome Gradient for Diamond Border -->
+    <linearGradient id="diamondBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="25%" stop-color="#cbd5e1" />
+      <stop offset="50%" stop-color="#475569" />
+      <stop offset="75%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+
+    <!-- Hydro Blue Gradient Inside Diamond -->
+    <linearGradient id="diamondBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="40%" stop-color="#0077ff" />
+      <stop offset="85%" stop-color="#0033aa" />
+      <stop offset="100%" stop-color="#060911" />
+    </linearGradient>
+
+    <!-- Chrome Text Gradient for TWT -->
+    <linearGradient id="twtTextGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="48%" stop-color="#f8fafc" />
+      <stop offset="52%" stop-color="#cbd5e1" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+
+    <!-- Cyan Glow Effect for Border -->
+    <filter id="glowEffect" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <g transform="translate(160, 100)" text-anchor="middle">
+    <!-- Outer Diamond Shape Border (Gleaming Metallic Chrome) -->
+    <polygon points="0,-85 150,0 0,85 -150,0" fill="url(#diamondBorder)" filter="url(#glowEffect)" />
+    
+    <!-- Inner Dark Gap Line -->
+    <polygon points="0,-78 140,0 0,78 -140,0" fill="#060911" />
+    
+    <!-- Hydro Electric Blue Interior fill -->
+    <polygon points="0,-72 132,0 0,72 -132,0" fill="url(#diamondBg)" />
+
+    <!-- 3D Glass Facet Overlays -->
+    <polygon points="0,-72 132,0 0,0" fill="rgba(255, 255, 255, 0.16)" />
+    <polygon points="0,0 132,0 0,72" fill="rgba(0, 0, 0, 0.22)" />
+    <polygon points="-132,0 0,0 0,72" fill="rgba(0, 0, 0, 0.32)" />
+
+    <!-- TWT Typography Inside Diamond Border -->
+    <text x="0" y="20" font-family="'Outfit', 'Inter', -apple-system, sans-serif" font-weight="900" font-style="italic" font-size="52" fill="url(#twtTextGrad)" letter-spacing="4" stroke="rgba(0,0,0,0.5)" stroke-width="1.5">TWT</text>
+  </g>
+</svg>
