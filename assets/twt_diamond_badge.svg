@@ -9,13 +9,14 @@
       <stop offset="100%" stop-color="#334155" />
     </linearGradient>
 
-    <!-- Hydro Blue fading to Dark Slate Gray/Blue Inside Diamond -->
+    <!-- Hydro Blue fading to DEEP Dark Slate Gray/Blue Inside Diamond -->
     <linearGradient id="diamondBg" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#38bdf8" />
-      <stop offset="30%" stop-color="#0077ff" />
-      <stop offset="60%" stop-color="#1e3a8a" />
-      <stop offset="82%" stop-color="#1e293b" />
-      <stop offset="100%" stop-color="#0f172a" />
+      <stop offset="22%" stop-color="#0077ff" />
+      <stop offset="42%" stop-color="#1e3a8a" />
+      <stop offset="65%" stop-color="#1e293b" />
+      <stop offset="85%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#050810" />
     </linearGradient>
 
     <!-- Chrome Text Gradient for TWT -->
@@ -44,9 +45,9 @@
     <polygon points="0,-80 160,0 0,80 -160,0" fill="url(#diamondBg)" />
 
     <!-- 3D Glass Facet Overlays -->
-    <polygon points="0,-80 160,0 0,0" fill="rgba(255, 255, 255, 0.18)" />
-    <polygon points="0,0 160,0 0,80" fill="rgba(15, 23, 42, 0.55)" />
-    <polygon points="-160,0 0,0 0,80" fill="rgba(30, 41, 59, 0.65)" />
+    <polygon points="0,-80 160,0 0,0" fill="rgba(255, 255, 255, 0.22)" />
+    <polygon points="0,0 160,0 0,80" fill="rgba(15, 23, 42, 0.72)" />
+    <polygon points="-160,0 0,0 0,80" fill="rgba(10, 15, 26, 0.82)" />
 
     <!-- TWT Typography Inside Diamond Border -->
     <text x="0" y="22" font-family="'Outfit', 'Inter', -apple-system, sans-serif" font-weight="900" font-style="italic" font-size="60" fill="url(#twtTextGrad)" letter-spacing="4" stroke="rgba(0,0,0,0.5)" stroke-width="1.5">TWT</text>
