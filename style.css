@@ -1116,6 +1116,15 @@ input[type=range]::-webkit-slider-thumb:hover {
   margin: 0 auto;
 }
 
+.about-divider-line {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 2px;
+  margin: 36px auto 28px auto;
+  display: block;
+}
+
 .about-bullets-list {
   margin-top: 0;
   display: flex;
