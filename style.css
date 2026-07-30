@@ -320,37 +320,8 @@ section {
 }
 
 .footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.footer-diamond-icon {
-  height: 44px;
-  width: auto;
-  object-fit: contain;
-}
-
-.footer-brand-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.footer-brand-title {
-  font-family: var(--font-heading);
-  font-size: 1.3rem;
-  font-weight: 900;
-  color: var(--text-main);
-  line-height: 1;
-}
-
-.footer-brand-sub {
-  font-family: 'Candara', var(--font-heading);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
-  text-transform: uppercase;
+  display: inline-flex;
+  margin-bottom: 8px;
 }
 
 .logo-title {
