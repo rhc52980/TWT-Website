@@ -2,15 +2,27 @@
    TWT - TECHNICAL WATER TREATMENT APP SCRIPT
    ========================================================================== */
 
-// Ensure mobile browsers always open at the very top hero section
+// Disable automatic mobile scroll restoration
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
 }
 
+// Force top scroll position on initial load
+window.scrollTo(0, 0);
+
 document.addEventListener('DOMContentLoaded', () => {
-  if (!window.location.hash) {
-    window.scrollTo(0, 0);
+  // If previous URL hash exists (e.g. #services from tapping hero CTA), clear it on reload
+  if (window.location.hash && window.location.hash !== '#home') {
+    history.replaceState(null, null, window.location.pathname);
   }
+  window.scrollTo(0, 0);
+});
+
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
 
   /* --- 1. Mobile Menu Navigation --- */
   const menuToggle = document.getElementById('menuToggle');
