@@ -7,22 +7,15 @@ if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
 }
 
-// Force top scroll position on initial load
-window.scrollTo(0, 0);
-
 document.addEventListener('DOMContentLoaded', () => {
-  // If previous URL hash exists (e.g. #services from tapping hero CTA), clear it on reload
+
+  // Clear trailing hash from previous CTA clicks
   if (window.location.hash && window.location.hash !== '#home') {
     history.replaceState(null, null, window.location.pathname);
   }
+  
+  // Force scroll to top on fresh load
   window.scrollTo(0, 0);
-});
-
-window.addEventListener('load', () => {
-  window.scrollTo(0, 0);
-});
-
-document.addEventListener('DOMContentLoaded', () => {
 
   /* --- 1. Mobile Menu Navigation --- */
   const menuToggle = document.getElementById('menuToggle');
@@ -127,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function calculateSavings() {
     // 1. Get Input values
+    if (!makeupVolumeInput) return;
     const makeup = parseFloat(makeupVolumeInput.value);
     const cCurrent = parseFloat(currentCyclesInput.value);
     const cTarget = parseFloat(targetCyclesInput.value);
@@ -149,16 +143,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 3. Calculator Math
-    // Evaporation is constant: E = Makeup_current * (1 - 1/Cycles_current)
     const evaporation = makeup * (1 - (1 / cCurrent));
-    
-    // New Makeup required at Target Cycles: Makeup_target = Evap / (1 - 1/Cycles_target)
     const makeupTarget = evaporation / (1 - (1 / cTarget));
-    
-    // Savings per day
     const savingsPerDay = makeup - makeupTarget;
-    
-    // Annualized
     const annualWaterSavings = savingsPerDay * 365;
     const annualCostSavings = (annualWaterSavings / 1000) * rate;
 
@@ -166,60 +153,58 @@ document.addEventListener('DOMContentLoaded', () => {
     waterSavingsDisplay.textContent = formatNumber(annualWaterSavings);
     costSavingsDisplay.textContent = formatNumber(annualCostSavings);
 
-    // 5. Risk Scoring Math (0 to 100)
-    // Risk factors: months since disinfection (worse as it goes up), low cycles (safety okay, but inefficient), high cycles without chemical control
-    // Legionella growth multiplies rapidly in standing biofilm
+    // 5. Risk Scoring Math
     let riskScore = 0;
-    
-    // Months since last clean: <3 months = 10pts, 3-6 = 30pts, 6-12 = 60pts, >12 = 90pts
     if (months <= 3) {
-      riskScore += months * 8; // max 24
+      riskScore += months * 8;
     } else if (months <= 6) {
-      riskScore += 24 + (months - 3) * 12; // max 60
+      riskScore += 24 + (months - 3) * 12;
     } else {
-      riskScore += 60 + (months - 6) * 4.5; // max 114
+      riskScore += 60 + (months - 6) * 4.5;
     }
 
-    // High current cycles increase scaling risk if not treated professionally.
-    // If cycles > 5.5, add scaling risk score
     if (cCurrent > 5.0) {
       riskScore += (cCurrent - 5.0) * 10;
     }
 
-    // Clamp score
     riskScore = Math.max(5, Math.min(95, riskScore));
 
-    // 6. Update Risk Gauge
-    riskMarker.style.left = `${riskScore}%`;
+    if (riskMarker) riskMarker.style.left = `${riskScore}%`;
 
-    // 7. Update Risk Message & Colors
     let statusText = "";
     if (riskScore < 35) {
       statusText = `LOW RISK (${Math.round(riskScore)}%): Regular sanitizations and stable cycles detected. Standard monitoring advised.`;
-      riskStatus.style.color = 'var(--color-low)';
-      riskStatus.style.backgroundColor = 'rgba(16, 185, 129, 0.08)';
+      if (riskStatus) {
+        riskStatus.style.color = 'var(--color-low)';
+        riskStatus.style.backgroundColor = 'rgba(16, 185, 129, 0.08)';
+      }
     } else if (riskScore < 65) {
       statusText = `MODERATE RISK (${Math.round(riskScore)}%): Scale or biological biofilm is likely forming. System audit recommended.`;
-      riskStatus.style.color = 'var(--color-medium)';
-      riskStatus.style.backgroundColor = 'rgba(245, 158, 11, 0.08)';
+      if (riskStatus) {
+        riskStatus.style.color = 'var(--color-medium)';
+        riskStatus.style.backgroundColor = 'rgba(245, 158, 11, 0.08)';
+      }
     } else {
       statusText = `HIGH BIOLOGICAL RISK (${Math.round(riskScore)}%): Overdue for sanitization! Danger of Legionella growth. Schedule disinfection immediately.`;
-      riskStatus.style.color = 'var(--color-high)';
-      riskStatus.style.backgroundColor = 'rgba(239, 68, 68, 0.08)';
-    }
-    riskStatus.textContent = statusText;
-
-    // 8. Update TWT Recommendations/Insights Dynamically
-    const percentSavings = ((makeup - makeupTarget) / makeup * 100).toFixed(0);
-    insightsList.innerHTML = `
-      <li>Increasing to <strong>${cTarget.toFixed(1)} Cycles</strong> reduces your makeup water demand by <strong>${percentSavings}%</strong>, conserving <strong>${formatNumber(savingsPerDay)} gallons</strong> of water every single day.</li>
-      <li>Your annual cost savings of <strong>$${formatNumber(annualCostSavings)}</strong> will comfortably fund your annual TWT chemical contract and automated monitoring equipment.</li>
-      ${months >= 6 ? 
-        `<li style="color: var(--color-high); font-weight: 500;">Warning: Draining and disinfecting your cooling tower is recommended every 6 months. Your system is currently overdue.</li>` : 
-        `<li>Your current sanitization interval (${months} months) aligns well with OSHA and ASHRAE Standard 188 recommendations.</li>`
+      if (riskStatus) {
+        riskStatus.style.color = 'var(--color-high)';
+        riskStatus.style.backgroundColor = 'rgba(239, 68, 68, 0.08)';
       }
-      <li>Optimal scale and biological protection requires continuous biocide and inhibitor feeds tailored to Granger region water mineral levels.</li>
-    `;
+    }
+    if (riskStatus) riskStatus.textContent = statusText;
+
+    const percentSavings = ((makeup - makeupTarget) / makeup * 100).toFixed(0);
+    if (insightsList) {
+      insightsList.innerHTML = `
+        <li>Increasing to <strong>${cTarget.toFixed(1)} Cycles</strong> reduces your makeup water demand by <strong>${percentSavings}%</strong>, conserving <strong>${formatNumber(savingsPerDay)} gallons</strong> of water every single day.</li>
+        <li>Your annual cost savings of <strong>$${formatNumber(annualCostSavings)}</strong> will comfortably fund your annual TWT chemical contract and automated monitoring equipment.</li>
+        ${months >= 6 ? 
+          `<li style="color: var(--color-high); font-weight: 500;">Warning: Draining and disinfecting your cooling tower is recommended every 6 months. Your system is currently overdue.</li>` : 
+          `<li>Your current sanitization interval (${months} months) aligns well with OSHA and ASHRAE Standard 188 recommendations.</li>`
+        }
+        <li>Optimal scale and biological protection requires continuous biocide and inhibitor feeds tailored to Granger region water mineral levels.</li>
+      `;
+    }
   }
 
   // Bind inputs to recalculate on slider interaction
@@ -228,7 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
     inputs.forEach(input => {
       input.addEventListener('input', calculateSavings);
     });
-    // Initial run
     calculateSavings();
   }
 
@@ -243,7 +227,6 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      // Show sending feedback on button
       const originalText = submitBtn ? submitBtn.textContent : 'Send Secure Request';
       if (submitBtn) {
         submitBtn.disabled = true;
@@ -253,7 +236,6 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         const formData = new FormData(contactForm);
 
-        // Submit via FormSubmit AJAX API
         const response = await fetch('https://formsubmit.co/ajax/office@technicalwater.com', {
           method: 'POST',
           body: formData,
@@ -265,7 +247,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (response.ok) {
           formSuccessCard.classList.add('active');
         } else {
-          // Fallback UI activation if network or CORS occurs
           formSuccessCard.classList.add('active');
         }
       } catch (err) {
@@ -282,10 +263,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (resetFormBtn) {
       resetFormBtn.addEventListener('click', () => {
         contactForm.reset();
-        
         const selectElement = document.getElementById('contactService');
         if (selectElement) selectElement.selectedIndex = 0;
-
         formSuccessCard.classList.remove('active');
       });
     }
@@ -294,31 +273,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* --- 5. Scroll Reveal & Intersection Observer --- */
   const revealElements = document.querySelectorAll('.scroll-reveal');
+  revealElements.forEach(element => {
+    element.classList.add('reveal-active');
+  });
 
   if ('IntersectionObserver' in window) {
     const observerOptions = {
       root: null,
-      rootMargin: '0px',
-      threshold: 0.15
+      rootMargin: '50px',
+      threshold: 0.05
     };
 
-    const revealObserver = new IntersectionObserver((entries, observer) => {
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('reveal-active');
-          // Once animated, no need to keep observing
-          observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
 
     revealElements.forEach(element => {
       revealObserver.observe(element);
-    });
-  } else {
-    // Fallback for older browsers
-    revealElements.forEach(element => {
-      element.classList.add('reveal-active');
     });
   }
 

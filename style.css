@@ -1488,14 +1488,14 @@ input[type=range]::-webkit-slider-thumb:hover {
   }
 }
 
-/* Scroll Reveal Initial Animation State */
+/* --- Scroll Reveal Initial Animation State --- */
 .scroll-reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .scroll-reveal.reveal-active {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
