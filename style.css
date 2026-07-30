@@ -1515,6 +1515,11 @@ input[type=range]::-webkit-slider-thumb:hover {
     margin-bottom: 0;
   }
 
+  .footer-hours p a {
+    display: block;
+    margin-top: 2px;
+  }
+
   .sub-container {
     flex-direction: column;
     gap: 16px;
