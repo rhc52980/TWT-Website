@@ -1036,18 +1036,11 @@ input[type=range]::-webkit-slider-thumb:hover {
 }
 
 .legionella-full-card {
-  background: var(--bg-card);
-  border: 1px solid rgba(239, 68, 68, 0.25);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
-  padding: 48px;
+  padding: 50px;
   box-shadow: var(--shadow-lg);
-}
-
-.legionella-full-card h2 {
-  font-family: var(--font-heading);
-  font-size: 2.2rem;
-  font-weight: 800;
-  margin-top: 10px;
 }
 
 .legionella-lead {
@@ -1091,10 +1084,8 @@ input[type=range]::-webkit-slider-thumb:hover {
 
 /* --- About Us Section --- */
 .about-section {
-  background-color: var(--bg-card-alt);
+  background-color: var(--bg-surface);
   padding: 90px 0;
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
 }
 
 .about-box {
@@ -1103,7 +1094,7 @@ input[type=range]::-webkit-slider-thumb:hover {
   border-radius: var(--radius-xl);
   padding: 56px 48px;
   box-shadow: var(--shadow-lg);
-  max-width: 960px;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
 }
