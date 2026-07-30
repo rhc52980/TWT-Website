@@ -1121,8 +1121,8 @@ input[type=range]::-webkit-slider-thumb:hover {
   justify-content: center;
   align-items: stretch;
   gap: 24px;
-  margin-top: 40px;
-  padding-top: 36px;
+  margin-top: 56px;
+  padding-top: 44px;
   border-top: 1px solid var(--border-color);
 }
 
