@@ -1437,6 +1437,11 @@ input[type=range]::-webkit-slider-thumb:hover {
     gap: 40px;
   }
 
+  .systems-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
   .footer-container {
     grid-template-columns: 1fr 1fr;
   }
@@ -1467,6 +1472,11 @@ input[type=range]::-webkit-slider-thumb:hover {
 
   .nav-btn-desktop {
     display: none;
+  }
+
+  .systems-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
   }
 
   .about-stats-row {
