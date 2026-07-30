@@ -50,7 +50,7 @@
     <polygon points="-160,0 0,0 0,80" fill="rgba(10, 15, 26, 0.82)" />
 
     <!-- TWT Typography Inside Diamond Border -->
-    <text x="0" y="28" font-family="'Outfit', 'Inter', -apple-system, sans-serif" font-weight="900" font-style="italic" font-size="82" fill="url(#twtTextGrad)" letter-spacing="3" stroke="rgba(0,0,0,0.6)" stroke-width="2">TWT</text>
+    <text x="0" y="24" font-family="'Outfit', 'Inter', -apple-system, sans-serif" font-weight="900" font-style="italic" font-size="70" fill="url(#twtTextGrad)" letter-spacing="2.5" stroke="rgba(0,0,0,0.6)" stroke-width="1.8">TWT</text>
   </g>
 
   <!-- Subtitle Typography: TECHNICAL WATER TREATMENT (100px MAXIMUM BOLD FONT) -->
