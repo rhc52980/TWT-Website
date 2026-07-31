@@ -386,8 +386,8 @@ section {
   align-items: center;
   overflow: hidden;
   background-color: #060911;
-  background-image: linear-gradient(180deg, rgba(6, 9, 17, 0.18) 0%, rgba(6, 9, 17, 0.6) 100%), url('assets/water-globe-droplet.jpg');
-  background-position: center center, center 95px;
+  background-image: linear-gradient(180deg, rgba(6, 9, 17, 0.75) 0%, rgba(6, 9, 17, 0.85) 100%), url('assets/water-globe-droplet.jpg');
+  background-position: center center, center center;
   background-size: auto, cover;
   background-repeat: no-repeat, no-repeat;
 }
