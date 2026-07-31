@@ -385,7 +385,11 @@ section {
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: #060911 linear-gradient(180deg, rgba(6, 9, 17, 0.18) 0%, rgba(6, 9, 17, 0.6) 100%), url('assets/water-globe-droplet.jpg') center 95px / cover no-repeat;
+  background-color: #060911;
+  background-image: linear-gradient(180deg, rgba(6, 9, 17, 0.18) 0%, rgba(6, 9, 17, 0.6) 100%), url('assets/water-globe-droplet.jpg');
+  background-position: center center, center 95px;
+  background-size: auto, cover;
+  background-repeat: no-repeat, no-repeat;
 }
 
 .hero-bg-overlay {
@@ -1447,8 +1451,8 @@ input[type=range]::-webkit-slider-thumb:hover {
   .hero {
     padding-top: 150px;
     padding-bottom: 70px;
-    background-position: center 100px;
-    background-size: cover;
+    background-position: center center, center 100px;
+    background-size: auto, cover;
   }
 
   .hero-content {
