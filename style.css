@@ -379,13 +379,13 @@ section {
 /* --- Hero Section --- */
 .hero {
   position: relative;
-  padding-top: 160px;
-  padding-bottom: 90px;
-  min-height: 85vh;
+  padding-top: 170px;
+  padding-bottom: 110px;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(6, 9, 17, 0.68) 0%, rgba(6, 9, 17, 0.86) 100%), url('assets/water-globe-droplet.jpg') center / cover no-repeat;
+  background: #060911 linear-gradient(180deg, rgba(6, 9, 17, 0.18) 0%, rgba(6, 9, 17, 0.6) 100%), url('assets/water-globe-droplet.jpg') center 95px / cover no-repeat;
 }
 
 .hero-bg-overlay {
@@ -394,17 +394,28 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 75% 35%, rgba(0, 136, 255, 0.16) 0%, transparent 65%);
+  background: radial-gradient(circle at 50% 30%, rgba(0, 136, 255, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-water-effect {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(transparent, var(--bg-main));
+  z-index: 2;
   pointer-events: none;
 }
 
 .hero-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
+  gap: 50px;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .hero-brand-title {
@@ -449,13 +460,14 @@ section {
 
 /* --- System Chemistry Monitor Glass Card --- */
 .chemistry-dashboard-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(16px);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-xl);
-  padding: 32px;
-  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  background: rgba(15, 22, 41, 0.75);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 136, 255, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4), var(--shadow-glow);
   position: relative;
+  overflow: hidden;
 }
 
 .dash-header {
@@ -1430,6 +1442,13 @@ input[type=range]::-webkit-slider-thumb:hover {
 
   .nav-btn-desktop {
     display: none;
+  }
+
+  .hero {
+    padding-top: 150px;
+    padding-bottom: 70px;
+    background-position: center 100px;
+    background-size: cover;
   }
 
   .hero-content {
