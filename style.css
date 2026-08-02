@@ -386,7 +386,7 @@ section {
   align-items: center;
   overflow: hidden;
   background-color: #060911;
-  background-image: linear-gradient(180deg, rgba(6, 9, 17, 0.45) 0%, rgba(6, 9, 17, 0.75) 100%), url('assets/4.webp');
+  background-image: linear-gradient(180deg, rgba(6, 9, 17, 0.45) 0%, rgba(6, 9, 17, 0.75) 100%), url('assets/2.webp');
   background-position: center center, center center;
   background-size: auto, cover;
   background-repeat: no-repeat, no-repeat;
