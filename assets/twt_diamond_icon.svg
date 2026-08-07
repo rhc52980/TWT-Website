@@ -9,13 +9,14 @@
       <stop offset="100%" stop-color="#334155" />
     </linearGradient>
 
-    <!-- Hydro Blue fading to DEEP Pure Ocean Blue Inside Diamond (No purple/indigo) -->
+    <!-- Hydro Blue fading to DEEP Dark Midnight Blue in Bottom Half -->
     <linearGradient id="diamondBg" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#38bdf8" />
-      <stop offset="25%" stop-color="#0088ff" />
-      <stop offset="50%" stop-color="#0055d4" />
-      <stop offset="75%" stop-color="#003380" />
-      <stop offset="100%" stop-color="#041026" />
+      <stop offset="30%" stop-color="#0088ff" />
+      <stop offset="48%" stop-color="#0055c4" />
+      <stop offset="65%" stop-color="#002266" />
+      <stop offset="85%" stop-color="#010d24" />
+      <stop offset="100%" stop-color="#020612" />
     </linearGradient>
 
     <!-- Chrome Text Gradient for TWT -->
@@ -45,8 +46,8 @@
 
     <!-- 3D Glass Facet Overlays -->
     <polygon points="0,-72 132,0 0,0" fill="rgba(255, 255, 255, 0.22)" />
-    <polygon points="0,0 132,0 0,72" fill="rgba(15, 23, 42, 0.72)" />
-    <polygon points="-132,0 0,0 0,72" fill="rgba(10, 15, 26, 0.82)" />
+    <polygon points="0,0 132,0 0,72" fill="rgba(2, 6, 18, 0.82)" />
+    <polygon points="-132,0 0,0 0,72" fill="rgba(1, 4, 12, 0.92)" />
 
     <!-- TWT Typography Inside Diamond Border -->
     <text x="0" y="21" font-family="'Outfit', 'Inter', -apple-system, sans-serif" font-weight="900" font-style="italic" font-size="60" fill="url(#twtTextGrad)" letter-spacing="2.5" stroke="rgba(0,0,0,0.6)" stroke-width="1.8">TWT</text>
