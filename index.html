@@ -21,7 +21,7 @@
   <link rel="preload" as="image" href="assets/2.webp">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css?update=20260814v32">
+  <link rel="stylesheet" href="style.css?update=20260814v33">
   <style>
     .hero {
       position: relative;
@@ -53,7 +53,6 @@
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#home" class="nav-link active">Home</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#calculator" class="nav-link">RO Calculator</a></li>
           <li><a href="#legionella" class="nav-link">Legionella</a></li>
           <li><a href="#about" class="nav-link">About Us</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -90,7 +89,7 @@
         </p>
         <div class="hero-buttons fade-in-up">
           <a href="#contact" class="btn btn-primary">Schedule Consultation</a>
-          <a href="#calculator" class="btn btn-secondary">Calculate RO Savings</a>
+          <a href="#services" class="btn btn-secondary">Explore Services</a>
         </div>
       </div>
       
@@ -256,97 +255,6 @@
         </div>
         <h4>LEGIONELLA & BIOFILM SAFETY</h4>
         <p>ASHRAE Standard 188 compliance, biological risk audits, and physical sanitizations.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive RO ROI Calculator Section -->
-  <section class="calculator-section" id="calculator">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="sub-label">Interactive Financial Model</span>
-        <h2 class="section-title">Reverse Osmosis ROI Calculator</h2>
-        <div class="section-underline"></div>
-        <p class="section-description">Estimate your facility's annual chemical, water, and energy savings by switching to TWT optimized Reverse Osmosis pretreatment.</p>
-      </div>
-
-      <div class="calculator-grid">
-        <!-- Inputs Card -->
-        <div class="calc-card">
-          <h3>System Operating Inputs</h3>
-          
-          <div class="slider-group">
-            <div class="slider-header">
-              <label for="flowRate">Daily Water Consumption (Gallons/Day)</label>
-              <span id="flowRateVal" class="slider-val">25,000 GPD</span>
-            </div>
-            <input type="range" id="flowRate" min="5000" max="150000" step="5000" value="25000">
-          </div>
-
-          <div class="slider-group">
-            <div class="slider-header">
-              <label for="waterCost">Municipal Water & Sewer Rate ($/1,000 Gal)</label>
-              <span id="waterCostVal" class="slider-val">$10.50</span>
-            </div>
-            <input type="range" id="waterCost" min="4.00" max="25.00" step="0.50" value="10.50">
-          </div>
-
-          <div class="slider-group">
-            <div class="slider-header">
-              <label for="rawHardness">Raw Water Hardness (PPM CaCO₃)</label>
-              <span id="rawHardnessVal" class="slider-val">280 PPM</span>
-            </div>
-            <input type="range" id="rawHardness" min="50" max="600" step="10" value="280">
-          </div>
-
-          <div class="slider-group">
-            <div class="slider-header">
-              <label for="targetCycles">Target Cycles of Concentration</label>
-              <span id="targetCyclesVal" class="slider-val">6.0 Cycles</span>
-            </div>
-            <input type="range" id="targetCycles" min="2.0" max="10.0" step="0.5" value="6.0">
-          </div>
-        </div>
-
-        <!-- Output Results Card -->
-        <div class="calc-card">
-          <h3>Projected Annual Savings</h3>
-          
-          <div class="savings-metrics-grid">
-            <div class="metric-box green-accent">
-              <span class="metric-num" id="annualDollarSavings">$18,450</span>
-              <span class="metric-unit">Per Year</span>
-              <span class="metric-label">Estimated Utility Savings</span>
-            </div>
-            <div class="metric-box blue-accent">
-              <span class="metric-num" id="annualWaterSaved">1,750,000</span>
-              <span class="metric-unit">Gallons</span>
-              <span class="metric-label">Water Conserved Annually</span>
-            </div>
-          </div>
-
-          <div class="risk-gauge-container">
-            <div class="gauge-header">Pretreatment Scaling Risk Index</div>
-            <div class="gauge-bar">
-              <div class="gauge-seg seg-low"></div>
-              <div class="gauge-seg seg-mid"></div>
-              <div class="gauge-seg seg-high"></div>
-              <div class="gauge-pointer" id="gaugePointer" style="left: 35%;"></div>
-            </div>
-            <div id="gaugeStatusText" class="gauge-status">Moderate Risk - RO Pretreatment Recommended</div>
-          </div>
-
-          <div class="efficiency-insights">
-            <h4>Optimization Impact Analysis</h4>
-            <ul>
-              <li id="blowdownReductionText">Blowdown volume reduced by 32%</li>
-              <li id="chemicalReductionText">Chemical dosage requirement decreased by 25%</li>
-              <li id="boilerEfficiencyText">Heat transfer efficiency improved by 1.8%</li>
-            </ul>
-          </div>
-
-          <a href="#contact" class="btn btn-primary btn-block">Lock In Your Custom Savings Audit</a>
-        </div>
       </div>
     </div>
   </section>
@@ -564,7 +472,6 @@
         <h4>Quick Links</h4>
         <a href="#home">Home</a>
         <a href="#services">Services</a>
-        <a href="#calculator">RO Calculator</a>
         <a href="#legionella">Legionella Safety</a>
         <a href="#about">About Us</a>
         <a href="#contact">Contact</a>
